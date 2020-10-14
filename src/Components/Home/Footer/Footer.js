@@ -20,8 +20,8 @@ const Footer = () => {
                        <div className="form-group">
                            <textarea name="" className="form-control" id="" cols="30" rows="10" placeholder="Your message"></textarea>
                        </div>
-                       <div className="form-group text-center">
-                           <button type="button" className="btn btn-primary"> Submit </button>
+                       <div className="form-group">
+                           <button type="button" className="btn btn-dark px-5"> Submit </button>
                        </div>
                    </form>
                </div>
