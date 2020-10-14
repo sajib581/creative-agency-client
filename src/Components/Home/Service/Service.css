@@ -1,0 +1,6 @@
+.service{
+    height: 200px;
+}
+.service:hover{
+    box-shadow: 5px 5px 30px lightgrey;
+}
