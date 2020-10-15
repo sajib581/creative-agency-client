@@ -25,7 +25,7 @@ const OrderForm = () => {
                                 <input type="text" className="form-control form-control-lg" placeholder="Price" />
                             </div>
                             <div className="form-group col-md-6">
-                                <h6 className="form-control form-control-lg text-center" style={{backgroundColor: '#DEFFED', color: '#009444'}}><FontAwesomeIcon icon={faCloudUploadAlt} /><span className="mx-3">Upload Project File</span></h6>               
+                                <h6 className="form-control form-control-lg text-center" style={{backgroundColor: '#DEFFED', color: '#009444', cursor:"pointer"}}><FontAwesomeIcon icon={faCloudUploadAlt} /><span className="mx-3">Upload Project File</span></h6>               
                             </div>
                         </div>
                         <div className="form-group" >

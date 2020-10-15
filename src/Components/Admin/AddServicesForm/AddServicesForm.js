@@ -24,7 +24,7 @@ const AddServicesForm = () => {
                 </div>
                 <div className="col-md-5 mx-auto">
                     <div className="form-group mt-5 pt-4 w-50">
-                        <h6 className="form-control text-center" style={{ backgroundColor: '#DEFFED', color: '#009444' }}><FontAwesomeIcon icon={faCloudUploadAlt} /><span className="mx-3">Upload Project File</span></h6>
+                        <h6 className="form-control text-center" style={{cursor:"pointer", backgroundColor: '#DEFFED', color: '#009444' }}><FontAwesomeIcon icon={faCloudUploadAlt} /><span className="mx-3">Upload Project File</span></h6>
                     </div>
                 </div>
             </div>
