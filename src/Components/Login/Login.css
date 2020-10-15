@@ -1,0 +1,18 @@
+.google{
+    border: 1px solid lightgrey;
+    margin-bottom: 5px;
+    border-radius:40px ;
+    padding: 5px 0px ;
+    cursor: pointer;
+}
+
+.google img{
+    height:30px ;
+    padding-left: 10px;
+}
+.login{
+    width:440px;
+    height:360px ;
+    border: 1px solid lightgrey;
+    padding:50px;
+}
