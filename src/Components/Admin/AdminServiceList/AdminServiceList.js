@@ -28,7 +28,7 @@ const AdminServiceList = () => {
                                 <th scope="row">{order.userName}</th>
                                 <td>{order.email}</td>
                                 <td>{order.name}</td>
-                                <td>{order.description}</td>
+                                <td>{order.description.slice(0,25)+" ....."}</td>
                                 <td><select className="btn btn-success dropdown-toggle" name="cars" id="cars">
                                     <option value="Pending">Pending</option>
                                     <option value="On Going">On Going</option>

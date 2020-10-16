@@ -57,10 +57,10 @@ const OrderForm = () => {
                             <textarea onBlur={handelBlur} name="description" className="form-control form-control-lg" id="" cols="20" rows="5" placeholder="Project Details"></textarea>
                         </div>
                         <div className="row">
-                            <div className="form-group col-md-6">
+                            <div className="form-group col-md-6 col-sm-12 col-12">
                                 <input name="description" type="text" value="50$" className="form-control disabled form-control-lg" placeholder="Price" />
                             </div>
-                            <div className="form-group col-md-6">
+                            <div className="form-group col-md-6 col-sm-12">
                                 <div className="custom-file">
                                     <input onChange={handelFileChange} type="file" name="img" className="custom-file-input form-control form-control-lg" id="customFile" />
                                     <label style={{ backgroundColor: '#DEFFED', color: '#009444', cursor: "pointer" }} className="custom-file-label form-control-lg" for="customFile"><FontAwesomeIcon icon={faCloudUploadAlt} /> <span className="ml-3">Choose file</span></label>

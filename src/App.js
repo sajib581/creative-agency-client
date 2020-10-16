@@ -59,15 +59,3 @@ function App() {
 }
 
 export default App;
-
-//style={{cursor:"pointer"}}
-
-// useEffect(()=>{
-//   fetch('http://localhost:5000/addManyItllem',{
-//   method:'POST',
-//   headers: {'Content-Type': 'application/json'},
-//   body: JSON.stringify(serviceData)
-// })
-// .then(res => res.json())
-// .then(data => console.log(data))
-// }, [])

@@ -37,7 +37,7 @@ const SideBar = () => {
 
             <div className="mt-5">
 
-                <h5 onClick={() => history.push("/servicelist")} className="my-4"><FontAwesomeIcon icon={faLock} /><span className="mx-3">Service List</span></h5>
+                <h5 onClick={() => history.push(`/servicelist`)} className="my-4"><FontAwesomeIcon icon={faLock} /><span className="mx-3">Service List</span></h5>
                 {isAdmin ? <div>
                     <h5 onClick={() => history.push("/admin/addservices")} className="my-4"><FontAwesomeIcon icon={faPlus} /><span className="mx-3">Add Service</span></h5>
                     <h5 onClick={() => history.push("/admin/makeadmin")} className="my-4"><FontAwesomeIcon icon={faUserPlus} /><span className="mx-3">Make Admin</span></h5></div> :

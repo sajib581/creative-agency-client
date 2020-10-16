@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../App';
 import Status from '../Status/Status';
 
 const CustomerServiceList = () => {
     const [statusData, setStatusData] = useState([])
+    const [loggedInUser, setLoggedInUser ] = useContext(UserContext)
+    const email = loggedInUser.email
         useEffect(()=>{
-        fetch('http://localhost:5000/showclientorders')
+        fetch(`http://localhost:5000/showclientorders`,{
+            method:'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({email:email})
+          })
         .then(res => res.json())
         .then(data => setStatusData(data) )
         }, [])
