@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -13,10 +13,15 @@ import ServiceList from './Components/Shared/ServiceList/ServiceList';
 import Review from './Components/Customer/Review/Review';
 import MakeAdmin from './Components/Admin/MakeAdmin/MakeAdmin';
 import AddServices from './Components/Admin/AddServices/AddServices';
+import PrivateRoute from './Components/Login/PrivateRoute';
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
       <div>
         <Switch>
           <Route path="/home">
@@ -25,21 +30,21 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/customer/order">
+          <PrivateRoute path="/customer/order">
             <PlaceOrder></PlaceOrder>
-          </Route>
-          <Route path="/servicelist">
+          </PrivateRoute>
+          <PrivateRoute path="/servicelist">
             <ServiceList></ServiceList>
-          </Route>
-          <Route path="/customer/review">
+          </PrivateRoute>
+          <PrivateRoute path="/customer/review">
             <Review></Review>
-          </Route>
-          <Route path="/admin/addservices">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/addservices">
             <AddServices></AddServices>
-          </Route>
-          <Route path="/admin/makeadmin">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/makeadmin">
             <MakeAdmin></MakeAdmin>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/">
             <Home></Home>
           </Route>
@@ -49,9 +54,20 @@ function App() {
         </Switch>
       </div>
     </Router>
+    </UserContext.Provider>
   );
 }
 
 export default App;
 
 //style={{cursor:"pointer"}}
+
+// useEffect(()=>{
+//   fetch('http://localhost:5000/addManyItllem',{
+//   method:'POST',
+//   headers: {'Content-Type': 'application/json'},
+//   body: JSON.stringify(serviceData)
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+// }, [])

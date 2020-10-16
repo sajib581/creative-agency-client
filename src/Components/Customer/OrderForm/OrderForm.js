@@ -1,35 +1,74 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react';
 
 const OrderForm = () => {
+    const name = localStorage.getItem('choice')
+    const [file, setFile] = useState(null)
+    const [info, setInfo] = useState({})
+    const handelBlur = e => {
+        const newInfo = { ...info, name }
+        newInfo[e.target.name] = e.target.value
+        setInfo(newInfo)
+    }
+    const handelFileChange = e => {
+        const newFile = e.target.files[0]
+        setFile(newFile)
+    }
+    const submitHandeler = () => {
+        const formData = new FormData()
+        formData.append('file', file)
+        formData.append('name', info.name)
+        formData.append('userName', info.userName)
+        formData.append('email', info.email)
+        formData.append('description', info.description)
+        formData.append('status', 'Pending')
+
+        fetch('http://localhost:5000/addOrder', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if(data){
+                    alert("Order submitted successfully")
+                }                
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
     return (
-        <div style={{ backgroundColor: "#EDF8F2", width: "100%"}} >
+        <div style={{ backgroundColor: "#EDF8F2", width: "100%" }} >
             <div className="row">
                 <div className="m-5 col-md-7">
-                    <form action="">
+                    <form >
                         <div className="form-group">
-                            <input type="text" className="form-control form-control-lg" placeholder="Your name / company’s name" />
+                            <input onBlur={handelBlur} name="userName" type="text" className="form-control form-control-lg" placeholder="Your name / company’s name" />
                         </div>
                         <div className="form-group">
-                            <input type="text" className="form-control form-control-lg" placeholder="Your email address " />
+                            <input onBlur={handelBlur} name="email" type="email" className="form-control form-control-lg" placeholder="Your email address " />
                         </div>
                         <div className="form-group">
-                            <input type="text" className="form-control form-control-lg" placeholder="Graphics Design" />
+                            <input name="select" type="text" value={name} className="form-control form-control-lg" />
                         </div>
                         <div className="form-group">
-                            <textarea name="" className="form-control form-control-lg" id="" cols="30" rows="5" placeholder="Project Details"></textarea>
+                            <textarea onBlur={handelBlur} name="description" className="form-control form-control-lg" id="" cols="20" rows="5" placeholder="Project Details"></textarea>
                         </div>
                         <div className="row">
                             <div className="form-group col-md-6">
-                                <input type="text" className="form-control form-control-lg" placeholder="Price" />
+                                <input name="description" type="text" value="50$" className="form-control disabled form-control-lg" placeholder="Price" />
                             </div>
                             <div className="form-group col-md-6">
-                                <h6 className="form-control form-control-lg text-center" style={{backgroundColor: '#DEFFED', color: '#009444', cursor:"pointer"}}><FontAwesomeIcon icon={faCloudUploadAlt} /><span className="mx-3">Upload Project File</span></h6>               
+                                <div className="custom-file">
+                                    <input onChange={handelFileChange} type="file" name="img" className="custom-file-input form-control form-control-lg" id="customFile" />
+                                    <label style={{ backgroundColor: '#DEFFED', color: '#009444', cursor: "pointer" }} className="custom-file-label form-control-lg" for="customFile"><FontAwesomeIcon icon={faCloudUploadAlt} /> <span className="ml-3">Choose file</span></label>
+                                </div>
                             </div>
                         </div>
                         <div className="form-group" >
-                            <button type="button" className="btn btn-dark px-5 form-control-lg"> Send </button>
+                            <button type="button" onClick={submitHandeler} className="btn btn-dark px-5 form-control-lg"> Send </button>
                         </div>
                     </form>
                 </div>

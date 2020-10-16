@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from "react-router-dom";
+import { UserContext } from '../../../App';
 
 const Nav = () => {
+    let history = useHistory();
+    const [loggedInUser, setLoggedInUser ] = useContext(UserContext)
     return (
         <section>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -24,7 +28,7 @@ const Nav = () => {
                             <a className="nav-link ml-5" href="#">Contact us</a>
                         </li> 
                         <li className="nav-item">
-                            <button className="btn btn-dark ml-5 px-5">Login</button>
+    <button onClick={()=>history.push("/login")}  className="btn btn-dark ml-5 px-5">{loggedInUser.email ? "Logout" : "Login"}</button>
                         </li> 
                         
                     </ul>

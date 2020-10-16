@@ -5,13 +5,19 @@ import AdminCustomerNav from '../../Shared/AdminCustomerNav/AdminCustomerNav';
 import SideBar from '../../Shared/SideBar/SideBar';
 
 const ServiceList = () => {
+    const isAdmin = localStorage.getItem("isAdmin")
+    console.log(isAdmin);
     return (
         <div>
             <AdminCustomerNav></AdminCustomerNav>
             <div className="d-flex">
                 <SideBar></SideBar>
-                <AdminServiceList></AdminServiceList>
-                {/* <CustomerServiceList></CustomerServiceList> */}
+                {
+                    isAdmin  ? <AdminServiceList></AdminServiceList> : 
+                    <CustomerServiceList></CustomerServiceList>
+                }
+                
+                
             </div>
         </div>
     );
