@@ -7,7 +7,7 @@ const CustomerServiceList = () => {
     const [loggedInUser, setLoggedInUser ] = useContext(UserContext)
     const email = loggedInUser.email
         useEffect(()=>{
-        fetch(`http://localhost:5000/showclientorders`,{
+        fetch(`https://serene-harbor-22092.herokuapp.com/showclientorders`,{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email:email})

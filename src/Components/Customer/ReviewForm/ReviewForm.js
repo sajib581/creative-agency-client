@@ -10,7 +10,7 @@ const ReviewForm = () => {
 
     const submitHandeler = () => {
 
-    fetch('http://localhost:5000/addReview',{
+    fetch('https://serene-harbor-22092.herokuapp.com/addReview',{
         method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(info)

@@ -4,7 +4,7 @@ const MakeAdminForm = () => {
     const clickHandeler = (e) => {
         const email = document.getElementById('email').value
         console.log(email);
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://serene-harbor-22092.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email })

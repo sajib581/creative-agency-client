@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const AdminServiceList = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/showAllOrders')
+        fetch('https://serene-harbor-22092.herokuapp.com/showAllOrders')
             .then(response => response.json())
             .then(data => setOrders(data))
     })

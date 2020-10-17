@@ -2,11 +2,14 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../../../App';
 
 const OrderForm = () => {
     const name = localStorage.getItem('choice')
     const [file, setFile] = useState(null)
     const [info, setInfo] = useState({})
+    const [ loggedInUser, setLoggedInUser] = useContext(UserContext)
     const handelBlur = e => {
         const newInfo = { ...info, name }
         newInfo[e.target.name] = e.target.value
@@ -25,7 +28,7 @@ const OrderForm = () => {
         formData.append('description', info.description)
         formData.append('status', 'Pending')
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://serene-harbor-22092.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })
@@ -48,7 +51,7 @@ const OrderForm = () => {
                             <input onBlur={handelBlur} name="userName" type="text" className="form-control form-control-lg" placeholder="Your name / company’s name" />
                         </div>
                         <div className="form-group">
-                            <input onBlur={handelBlur} name="email" type="email" className="form-control form-control-lg" placeholder="Your email address " />
+                            <input onBlur={handelBlur} value={loggedInUser.email} name="email" type="email" className="form-control form-control-lg" placeholder="Your email address " />
                         </div>
                         <div className="form-group">
                             <input name="select" type="text" value={name} className="form-control form-control-lg" />
