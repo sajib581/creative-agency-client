@@ -4,8 +4,10 @@ import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
+import { useHistory } from "react-router-dom";
 
 const OrderForm = () => {
+    let history = useHistory();
     const name = localStorage.getItem('choice')
     const [file, setFile] = useState(null)
     const [info, setInfo] = useState({})
@@ -36,6 +38,7 @@ const OrderForm = () => {
             .then(data => {
                 if(data){
                     alert("Order submitted successfully")
+                    history.push(`/servicelist`)
                 }                
             })
             .catch(error => {
