@@ -30,10 +30,8 @@ It's a full MERN stack Web Application where anyone can see which services we ar
 - #### MongoDB
 - #### Firebase Authentication
 - #### Context API
-- #### Bootstrap
-- #### React-Bootstrap
+- #### Bootstrap<br />
+- #### React-Bootstrap <br />
 - #### Local Storage
-- George Washington
--#### John Adams
-- Thomas Jefferson
+
 
