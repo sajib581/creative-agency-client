@@ -12,7 +12,7 @@
 It's a full MERN stack Web Application where anyone can see which services we are providing and can place a order with project details and budget by clicking a service. In cilent page, anycone can see their order, place a order and give a feedback. In admin dashboard (which is open for now), you can see all orders placed by the clients, delete or edit any order, add a new service with service details. Also you can create another Admin of this site.
 
 ## Functionality
-* CURD operations by Mongoose
+*## CURD operations by Mongoose
 * Render multiple pages through React Router
 * Store data globally by Context API
 * Firebase Authentication
