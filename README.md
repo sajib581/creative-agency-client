@@ -21,7 +21,7 @@ It's a full MERN stack Web Application where anyone can see which services we ar
 * ### Store data at localStorage
 * ### Giving feedback and render it
 * ### Deploy client side on Netlify
-* ### Deploy server side on Heroku
+* #### Deploy server side on Heroku
 
 ## Technology
 
