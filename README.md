@@ -9,7 +9,3 @@
 * [Server Side Code Link](https://github.com/sajib581/creative-agenct-server).
 
 
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
-
