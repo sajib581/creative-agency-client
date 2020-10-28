@@ -30,8 +30,8 @@ It's a full MERN stack Web Application where anyone can see which services we ar
 - #### MongoDB
 - #### Firebase Authentication
 - #### Context API
-- #### Bootstrap<br />
-- #### React-Bootstrap <br />
+- #### Bootstrap
+- #### React-Bootstrap
 - #### Local Storage
 
 
