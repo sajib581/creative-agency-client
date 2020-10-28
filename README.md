@@ -34,6 +34,6 @@ It's a full MERN stack Web Application where anyone can see which services we ar
 - #### React-Bootstrap
 - #### Local Storage
 - George Washington
-- #### John Adams
+-#### John Adams
 - Thomas Jefferson
 
