@@ -24,8 +24,3 @@ It's a full MERN stack Web Application where anyone can see which services we ar
 * #### Deploy server side on Heroku
 
 ## Technology
-
-### H3
-#### H4
-##### H5
-
