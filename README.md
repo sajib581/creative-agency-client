@@ -1,6 +1,6 @@
-erstand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# Creative Agency
+### A full MERN stack Online Course Website
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
