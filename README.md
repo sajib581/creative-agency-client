@@ -24,9 +24,9 @@ It's a full MERN stack Web Application where anyone can see which services we ar
 - #### Deploy server side on Heroku
 
 ## Technology
-- #### REACT
-- #### Node js
-- #### Express js
+- ** REACT**
+- ** Node js**
+- ** Express js **
 - #### MongoDB
 - #### Firebase Authentication
 - #### Context API
